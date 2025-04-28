@@ -1,16 +1,25 @@
+//page routing
+import { useRoutes } from "react-router-dom";
+//header
+import Header from "./features/header/Header";
+//main
+import routes from "./routes"; 
+//footer
+import Footer from "./features/footer/Footer";
 
-import './App.css'
 
-function App() {
-
-
+import "./styles/App.css";
+export default function App() {
+  let router = useRoutes(routes)
   return (
-    <>
-    <p class="text-5xl p-23.75 text-amber-400 font-bold underline">
-      Hello world!
-    </p>
-    </>
-  )
+    <div>
+      <Header />
+      <main>
+        {router}
+      </main>
+      <Footer />
+    </div>
+  );
 }
 
-export default App
+
